@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import { UserCounter } from "./contextAPI/Context";
+import Counter from "./component/counter";
+import Componentb from "./component/componentb";
+import Context from "./contextAPI/Context.jsx";
+import { Container } from "semantic-ui-react";
+import ContactView from "./views/contact-view.jsx";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Context>
+        <Counter />
+        <Componentb />
+      </Context>
+      <Container>
+        <h1>React Hooks Context Demo</h1>
+        <ContactView />
+      </Container>
     </div>
   );
 }
